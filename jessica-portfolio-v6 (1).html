@@ -776,12 +776,16 @@ function openProject(idx) {
   const linkEl = document.getElementById('projModalLink');
   if (p.link) { linkEl.href = p.link; linkEl.textContent = p.linkText; linkEl.style.display='inline-flex'; }
   else { linkEl.style.display='none'; }
-  // Set image based on project
-  const imgSrcs = {rag:'data:image/
-  document.getElementById('projModalImg').innerHTML = `<img src="${imgSrcs[p.img]}" alt="${p.title}"/>`;
-  document.getElementById('projOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
+// Set image based on project
+const imgSrcs = {
+  rag: 'https://raw.githubusercontent.com/jessicasingh79/portfolio/main/rag%20(1).png',
+  mol: 'https://raw.githubusercontent.com/jessicasingh79/portfolio/main/rag%20(3).png',
+  n8n: 'https://raw.githubusercontent.com/jessicasingh79/portfolio/main/rag%20(2).png',
+  wf:  'https://raw.githubusercontent.com/jessicasingh79/portfolio/main/rag%20(5).png'
+};
+document.getElementById('projModalImg').innerHTML = `<img src="${imgSrcs[p.img]}" alt="${p.title}"/>`;
+document.getElementById('projOverlay').classList.add('open');
+document.body.style.overflow = 'hidden';
 
 // Close popup
 document.getElementById('projClose').addEventListener('click', closeProject);
